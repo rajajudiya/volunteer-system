@@ -3,6 +3,8 @@
 let volunteerStorage = [];
 
 const defaultController = (req, res) => {
+    // console.log('Cookies: ', res.cookies);
+    res.cookie('cookie','raj')
     res.render('index.ejs',{todos: volunteerStorage});
 }
 const todoApp = (req, res) => {

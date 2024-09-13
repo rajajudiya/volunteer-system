@@ -7,10 +7,12 @@ const port = process.env.PORT || 3000;
 const Path = path.join(__dirname, '/views');
 const router = require('./routes/index.js');
 const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser');
 
 app.set('view engine', 'ejs');
 app.set('views', Path);
 
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
